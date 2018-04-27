@@ -50,7 +50,9 @@ filmsRequest.open('GET', 'https://swapi.co/api/films', true);
 filmsRequest.send();
 
 window.onload = function() {
-    introTextEl.innerHTML = localStorage.getItem('intro-episode');
+    if (localStorage.getItem('intro-episode') !== null) {
+        introTextEl.innerHTML = localStorage.getItem('intro-episode');
+    }
 }
 
 function compareEpisodes(a, b) {
